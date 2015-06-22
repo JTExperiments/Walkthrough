@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4EF5AF1B3858BE00F2A1C2 /* Animation+Long.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EF5AE1B3858BE00F2A1C2 /* Animation+Long.swift */; };
 		1A55427E1B37CCB70038A0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55427D1B37CCB70038A0B9 /* AppDelegate.swift */; };
 		1A5542801B37CCB70038A0B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A55427F1B37CCB70038A0B9 /* ViewController.swift */; };
 		1A5542831B37CCB70038A0B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542811B37CCB70038A0B9 /* Main.storyboard */; };
 		1A5542851B37CCB70038A0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542841B37CCB70038A0B9 /* Assets.xcassets */; };
 		1A5542881B37CCB70038A0B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542861B37CCB70038A0B9 /* LaunchScreen.storyboard */; };
-		1A55429A1B37CCD00038A0B9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542911B37CCD00038A0B9 /* Animation.swift */; };
 		1A55429B1B37CCD00038A0B9 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542921B37CCD00038A0B9 /* Shape.swift */; };
 		1A55429C1B37CCD00038A0B9 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542931B37CCD00038A0B9 /* ShapeView.swift */; };
 		1A5542A11B37CCD00038A0B9 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542981B37CCD00038A0B9 /* Walkthrough.swift */; };
@@ -20,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4EF5AE1B3858BE00F2A1C2 /* Animation+Long.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Animation+Long.swift"; sourceTree = "<group>"; };
 		1A55427A1B37CCB70038A0B9 /* Walkthrough.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkthrough.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A55427D1B37CCB70038A0B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A55427F1B37CCB70038A0B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		1A5542841B37CCB70038A0B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5542871B37CCB70038A0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A5542891B37CCB70038A0B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A5542911B37CCD00038A0B9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		1A5542921B37CCD00038A0B9 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		1A5542931B37CCD00038A0B9 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		1A5542981B37CCD00038A0B9 /* Walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		1A55428F1B37CCD00038A0B9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				1A5542911B37CCD00038A0B9 /* Animation.swift */,
+				1A4EF5AE1B3858BE00F2A1C2 /* Animation+Long.swift */,
 				1A5542921B37CCD00038A0B9 /* Shape.swift */,
 				1A5542931B37CCD00038A0B9 /* ShapeView.swift */,
 				1AB494FE1B37F2A100CAC192 /* UIScrollView+Helper.swift */,
@@ -159,10 +159,10 @@
 			files = (
 				1A55429C1B37CCD00038A0B9 /* ShapeView.swift in Sources */,
 				1A55429B1B37CCD00038A0B9 /* Shape.swift in Sources */,
+				1A4EF5AF1B3858BE00F2A1C2 /* Animation+Long.swift in Sources */,
 				1AB494FF1B37F2A100CAC192 /* UIScrollView+Helper.swift in Sources */,
 				1A5542801B37CCB70038A0B9 /* ViewController.swift in Sources */,
 				1A5542A11B37CCD00038A0B9 /* Walkthrough.swift in Sources */,
-				1A55429A1B37CCD00038A0B9 /* Animation.swift in Sources */,
 				1A55427E1B37CCB70038A0B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +275,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Walkthrough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamztang.Walkthrough;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Walkthrough/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamztang.Walkthrough;
 				PRODUCT_NAME = "$(TARGET_NAME)";

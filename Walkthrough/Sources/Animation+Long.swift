@@ -1,7 +1,6 @@
 import UIKit
 
 public func createAppIcon2Animation(screenSize: CGSize) -> CAAnimation {
-
     let position = CAKeyframeAnimation(keyPath: "position")
     position.values = [
         NSValue(CGPoint: CGPointMake(screenSize.width + 50, 250)),
@@ -99,7 +98,7 @@ public func createIPhoneAnimation(screenSize: CGSize) -> CAAnimation {
     iphoneTimeline.duration = 6
     iphoneTimeline.fillMode = kCAFillModeForwards
     iphoneTimeline.removedOnCompletion = false
-    
+
     return iphoneTimeline
 }
 
