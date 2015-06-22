@@ -12,6 +12,11 @@
 		1A5542831B37CCB70038A0B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542811B37CCB70038A0B9 /* Main.storyboard */; };
 		1A5542851B37CCB70038A0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542841B37CCB70038A0B9 /* Assets.xcassets */; };
 		1A5542881B37CCB70038A0B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A5542861B37CCB70038A0B9 /* LaunchScreen.storyboard */; };
+		1A55429A1B37CCD00038A0B9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542911B37CCD00038A0B9 /* Animation.swift */; };
+		1A55429B1B37CCD00038A0B9 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542921B37CCD00038A0B9 /* Shape.swift */; };
+		1A55429C1B37CCD00038A0B9 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542931B37CCD00038A0B9 /* ShapeView.swift */; };
+		1A5542A11B37CCD00038A0B9 /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5542981B37CCD00038A0B9 /* Walkthrough.swift */; };
+		1AB494FF1B37F2A100CAC192 /* UIScrollView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB494FE1B37F2A100CAC192 /* UIScrollView+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		1A5542841B37CCB70038A0B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A5542871B37CCB70038A0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A5542891B37CCB70038A0B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A5542911B37CCD00038A0B9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		1A5542921B37CCD00038A0B9 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		1A5542931B37CCD00038A0B9 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		1A5542981B37CCD00038A0B9 /* Walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
+		1AB494FE1B37F2A100CAC192 /* UIScrollView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		1A55427C1B37CCB70038A0B9 /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				1A55428F1B37CCD00038A0B9 /* Sources */,
 				1A55427D1B37CCB70038A0B9 /* AppDelegate.swift */,
 				1A55427F1B37CCB70038A0B9 /* ViewController.swift */,
 				1A5542811B37CCB70038A0B9 /* Main.storyboard */,
@@ -62,6 +73,18 @@
 				1A5542891B37CCB70038A0B9 /* Info.plist */,
 			);
 			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		1A55428F1B37CCD00038A0B9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1A5542911B37CCD00038A0B9 /* Animation.swift */,
+				1A5542921B37CCD00038A0B9 /* Shape.swift */,
+				1A5542931B37CCD00038A0B9 /* ShapeView.swift */,
+				1AB494FE1B37F2A100CAC192 /* UIScrollView+Helper.swift */,
+				1A5542981B37CCD00038A0B9 /* Walkthrough.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A55429C1B37CCD00038A0B9 /* ShapeView.swift in Sources */,
+				1A55429B1B37CCD00038A0B9 /* Shape.swift in Sources */,
+				1AB494FF1B37F2A100CAC192 /* UIScrollView+Helper.swift in Sources */,
 				1A5542801B37CCB70038A0B9 /* ViewController.swift in Sources */,
+				1A5542A11B37CCD00038A0B9 /* Walkthrough.swift in Sources */,
+				1A55429A1B37CCD00038A0B9 /* Animation.swift in Sources */,
 				1A55427E1B37CCB70038A0B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +311,7 @@
 				1A55428E1B37CCB70038A0B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
