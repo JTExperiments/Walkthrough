@@ -51,4 +51,6 @@ walkthrough.animateScrollView(4.0, delay: 0)
 XCPShowView("iphone5", view: walkthrough)
 XCPSetExecutionShouldContinueIndefinitely()
 
-
+B.move { (basic) -> () in
+    basic.from(x: 0, y: 0)
+}

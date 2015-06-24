@@ -1,4 +1,4 @@
-import UIKit
+import QuartzCore
 
 public typealias B = CABasicAnimation
 public typealias S = CASpringAnimation
@@ -13,6 +13,12 @@ public protocol NSValueable {
 extension Float : NSValueable {
     public func toAnyObject() -> AnyObject {
         return NSNumber(float: self)
+    }
+}
+
+extension CGFloat : NSValueable {
+    public func toAnyObject() -> AnyObject {
+        return NSNumber(float: Float(self))
     }
 }
 
@@ -41,34 +47,6 @@ extension CAAnimation {
 
 }
 
-public class Basic<T> {
-
-    public func from(T) -> Self {
-        return self
-    }
-
-    public func to(T) -> Self {
-        return self
-    }
-
-    public func by(T) -> Self {
-        return self
-    }
-
-}
-
-class Spring<T> : Basic<T> {
-
-    func mass(mass: CGFloat) -> Self {
-        return self
-    }
-
-}
-
-func pointValue(x: CGFloat, y: CGFloat) -> NSValue {
-    return NSValue(CGPoint: CGPointMake(x, y))
-}
-
 public extension CABasicAnimation {
 
     static func keyPath(keyPath: String, from: NSValueable? = nil, to: NSValueable? = nil, by: NSValueable? = nil, fillMode: String = kCAFillModeForwards, removedOnCompletion: Bool = false) -> Self {
@@ -93,9 +71,29 @@ public extension CABasicAnimation {
         return self.keyPath("position", from: from, to: to, by: by)
     }
 
-    public static func move(value: (Basic<PointValueHandler>) -> ()) {
-
+    public static func move(builder: (builder:BasicAnimationBuilder)->()) -> Self {
+        let builder = BasicAnimationBuilder()
+        let animation = self(keyPath:"position")
+        builder.apply(animation)
+        return animation
     }
+
+    public static func move(handler:MoveHandler) -> Self {
+        let builder = BasicAnimationBuilder()
+        handler(from: builder.from, by: builder.by, to: builder.to, delay: builder.delay, duration: builder.duration, timing: builder.timing)
+        let animation = self(keyPath:"position")
+        builder.apply(animation)
+        return animation
+    }
+
+    public static func scale(handler:ScaleHandler) -> Self {
+        let builder = BasicAnimationBuilder()
+        handler(from: builder.from, by: builder.by, to: builder.to, delay: builder.delay, duration: builder.duration, timing: builder.timing)
+        let animation = self(keyPath:"transform.scale")
+        builder.apply(animation)
+        return animation
+    }
+
 
     // MARK: Timing Function
 
@@ -148,7 +146,7 @@ extension CAAnimationGroup {
 }
 
 
-class Frame<T> {
+public class Frame<T> {
     var keyTime : Float    // 0...1
     var timingFunction : CAMediaTimingFunction?
     var value: T?
@@ -169,12 +167,10 @@ class Frame<T> {
         return self
     }
 
-
     func easeIn() -> Self {
         self.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
         return self
     }
-
 
     func easeOut() -> Self {
         self.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
@@ -198,44 +194,11 @@ class Frame<T> {
 
 }
 
-class KeyFrameBuilder<T : NSValueable> {
+public extension CAKeyframeAnimation {
 
-    let animation : CAKeyframeAnimation
-    var frames : [Frame<T>] = []
+    public typealias MoveConfiguration = ((((keyTime:Float)->Frame<CGPoint>)) -> ())
 
-    init(animation: CAKeyframeAnimation) {
-        self.animation = animation
-    }
-
-    func build(keyTime: Float) -> Frame<T> {
-        let frame = Frame<T>(keyTime: keyTime)
-        frames.append(frame)
-        return frame
-    }
-
-    func commit() {
-        var keyTimes = [Float]()
-        var values = [AnyObject]()
-        var functions = [CAMediaTimingFunction]()
-        for frame in frames {
-            keyTimes.append(frame.keyTime)
-            values.append(frame.value!.toAnyObject())
-            let function = frame.timingFunction ?? CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
-            print(function)
-            functions.append(function)
-        }
-        animation.keyTimes = keyTimes
-        animation.values = values
-        animation.timingFunctions = functions
-    }
-
-}
-
-extension CAKeyframeAnimation {
-
-    typealias MoveConfiguration = ((((keyTime:Float)->Frame<CGPoint>)) -> ())
-
-    static func move(configuration: MoveConfiguration) -> CAKeyframeAnimation {
+    public static func move(configuration: MoveConfiguration) -> CAKeyframeAnimation {
         let animation = CAKeyframeAnimation(keyPath: "position")
         let builder = KeyFrameBuilder<CGPoint>(animation: animation)
         configuration(builder.build)
